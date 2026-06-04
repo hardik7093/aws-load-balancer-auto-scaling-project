@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS High Availability Project</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
+padding:20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+background:#293244;
+border-radius:20px;
+padding:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+h1{
+text-align:center;
+color:#ff9900;
+font-size:40px;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+color:#cbd5e1;
+margin-bottom:20px;
+}
+
+.cards{
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+width:250px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h2{
+color:#ff9900;
+margin-bottom:10px;
+}
+
+.status-box{
+background:#1e293b;
+padding:15px;
+border-radius:15px;
+text-align:center;
+margin-bottom:20px;
+}
+
+.status{
+color:#22c55e;
+margin:5px 0;
+font-size:22px;
+}
+
+.architecture{
+background:#111827;
+padding:15px;
+border-radius:15px;
+text-align:center;
+margin-bottom:20px;
+}
+
+.architecture h2{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.flow{
+color:#facc15;
+font-size:18px;
+font-weight:bold;
+}
+
+.details{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-bottom:20px;
+}
+
+.detail{
+background:#1e293b;
+padding:15px;
+border-radius:12px;
+text-align:center;
+}
+
+.detail span{
+color:#ff9900;
+font-weight:bold;
+}
+
+.services{
+text-align:center;
+}
+
+.services h2{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.service-list{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.service-list div{
+background:#0f172a;
+padding:10px 15px;
+border-radius:20px;
+border:1px solid #334155;
+}
+
+.clock{
+text-align:center;
+margin-top:20px;
+font-size:20px;
+color:#22c55e;
+}
+
+.footer{
+text-align:center;
+margin-top:15px;
+color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+.details{
+grid-template-columns:1fr;
+}
+
+.card{
+width:100%;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>☁ AWS Cloud Project</h1>
+
+<p class="subtitle">
+Highly Available Web Application using EC2, Application Load Balancer & Auto Scaling Group
+</p>
+
+<div class="cards">
+
+<div class="card">
+<h2>🖥 EC2</h2>
+<p>Multiple web servers running behind the Load Balancer.</p>
+</div>
+
+<div class="card">
+<h2>⚖ Load Balancer</h2>
+<p>Distributes traffic across healthy EC2 instances.</p>
+</div>
+
+<div class="card">
+<h2>🚀 Auto Scaling</h2>
+<p>Automatically replaces unhealthy servers.</p>
+</div>
+
+</div>
+
+<div class="status-box">
+<h2 class="status">✅ System Status : Healthy</h2>
+<h2 class="status">✅ Availability : 99.9%</h2>
+<h2 class="status">✅ Active Servers : 2 / 2</h2>
+</div>
+
+<div class="architecture">
+<h2>AWS Architecture</h2>
+<div class="flow">
+User → Application Load Balancer → Target Group → EC2 Instances
+</div>
+</div>
+
+<div class="details">
+
+<div class="detail">
+<span>Region</span><br>
+us-east-1
+</div>
+
+<div class="detail">
+<span>Instances</span><br>
+2 Running
+</div>
+
+<div class="detail">
+<span>Load Balancer</span><br>
+Application LB
+</div>
+
+<div class="detail">
+<span>Auto Scaling</span><br>
+Enabled
+</div>
+
+<div class="detail">
+<span>Health Checks</span><br>
+Active
+</div>
+
+<div class="detail">
+<span>High Availability</span><br>
+Enabled
+</div>
+
+</div>
+
+<div class="services">
+
+<h2>AWS Services Used</h2>
+
+<div class="service-list">
+<div>EC2</div>
+<div>ALB</div>
+<div>ASG</div>
+<div>Target Group</div>
+<div>Security Group</div>
+<div>Ubuntu</div>
+<div>Apache2</div>
+</div>
+
+</div>
+
+<div class="clock">
+Last Updated:
+<span id="clock"></span>
+</div>
+
+<div class="footer">
+Built by Hardik More 🚀
+</div>
+
+</div>
+
+<script>
+function updateClock(){
+const now = new Date();
+document.getElementById("clock").innerHTML =
+now.toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
+</body>
+</html>
